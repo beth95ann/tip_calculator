@@ -1,0 +1,36 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+
+
+
+int main()
+{
+double totalBill;
+double tip;
+char yesNo;
+int numberOfPeople;
+
+
+
+printf("Welcome to the tip calculator!\n\n");
+printf("Enter your total bill amount:\n");
+scanf("%lf", &totalBill);
+printf("Now enter your desired tip percent: 10, 25, etc.\n");
+scanf("%lf", &tip);
+printf("Are you splitting the tip amongst multiple people? y or n\n");
+scanf(" %c", &yesNo);
+if(yesNo == 'y'){
+    printf("How many people?\n");
+    scanf("%d", &numberOfPeople);
+    double tipPerPerson = ((tip/100)*totalBill)/numberOfPeople;
+    printf("Great! Your tip per person is $%f!", tipPerPerson);
+} else{
+    double totalTip = (tip/100)*totalBill;
+    printf("Alright, the tip total is $%f.", totalTip);
+}
+
+
+return 0;
+}
+
